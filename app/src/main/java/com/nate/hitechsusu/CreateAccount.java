@@ -53,7 +53,7 @@ public class CreateAccount extends AppCompatActivity {
     }
 
     private void openLogin(){
-        startActivity(new Intent(CreateAccount.class, Login.this));
+        startActivity(new Intent(CreateAccount.this, Login.class));
         finish();
     }
 
