@@ -7,12 +7,18 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
 
@@ -21,6 +27,7 @@ public class Login extends AppCompatActivity {
     private EditText password;
     private MaterialButton loginBtn;
     private MaterialButton createAccountBtn;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,8 @@ public class Login extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.login_btn);
         createAccountBtn = findViewById(R.id.create_btn);
+
+        firebaseAuth = FirebaseAuth.getInstance();
     }
 
     private void openCreateAccount(){
@@ -64,6 +73,19 @@ public class Login extends AppCompatActivity {
     }
 
     private void loginUser(String email, String password){
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        openHomePage();
+                    }else {
+                        Toast.makeText(Login.this, "Error Login in: "+task.getException(), Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(e -> Toast.makeText(Login.this, "Error: "+e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
+    }
 
+    private void openHomePage(){
+        startActivity(new Intent(Login.this, Home.class));
+        finish();
     }
 }
