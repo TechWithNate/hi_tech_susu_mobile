@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "1017141845946",
+    "project_id": "hi-tech-susu",
+    "storage_bucket": "hi-tech-susu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017141845946:android:cd9507efd631e53ea54783",
+        "android_client_info": {
+          "package_name": "com.nate.hi_tech_susu.hi_te"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMxz_9jsiVUbLBVI9irXusb7Y9YeTDSdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017141845946:android:43525e7bdf11b245a54783",
+        "android_client_info": {
+          "package_name": "com.nate.high_tech_susu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMxz_9jsiVUbLBVI9irXusb7Y9YeTDSdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017141845946:android:b87acbaa73efce19a54783",
+        "android_client_info": {
+          "package_name": "com.nate.hitechsusu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMxz_9jsiVUbLBVI9irXusb7Y9YeTDSdc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
